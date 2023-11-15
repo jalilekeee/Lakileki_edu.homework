@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Random Paint by Symbol 1</title>
+</head>
+<body>
+    <script defer>
+        window.addEventListener('mousemove', (e) => {
+            const el = document.createElement('span');
+            el.innerHTML = 'Jalil';
+            el.style.position = 'absolute';
+            el.style.left = `${e.clientX}px`;
+            el.style.top = `${e.clientY}px`;
+            el.style.color = getRandomColor(); 
+            document.body.appendChild(el);
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
